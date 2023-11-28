@@ -3,53 +3,53 @@
 
 Create a new and fresh enivronment using 'conda create' 
 
- - Conda create —-prefix /project/stuckert/ambaccam/environment final_project
+  Conda create —-prefix /project/stuckert/ambaccam/environment final_project
 
 
 Use 'conda activate' to activate and be able to use and install using conda
 
-- Conda activate /project/stuckert/ambaccam/.conda/envs/final_project_env
+ Conda activate /project/stuckert/ambaccam/.conda/envs/final_project_env
 
 
 Install two important programs to allow for the creation of the tree 'mafft' and 'iqtree' using 'conda install'
 
-- Conda install -c bioconda mafft
-- Conda install -c bioconda iqtree
+ Conda install -c bioconda mafft
+ Conda install -c bioconda iqtree
 
 
 Create a new directory using 'mkdir'. This will allow you to be organized and know what directory you are working in
 
-- Mkdir project
+ Mkdir project
 
 
 'cd' into the new directory. Don't forget otherwise you will be working in the main directory
 
-- Cd project
+ Cd project
 
 
 Obtain the protein sequences of the organisms in NCBI. After downloading them, copy them into linux by opening a text editor. Use 'nano' and paste in the sequences.
 
-- nano protein_sequences
+ nano protein_sequences
 
 
 ALign the sequences using 'mafft'. The first will be the input and the second will be the output
 
-- mafft --auto protein_sequences > aligned_sequences.fasta
+ mafft --auto protein_sequences > aligned_sequences.fasta
 
 
 You can use 'nano' to check if the aligned sequences made it into your output
 
-- nano aligned_sequences.fasta
+ nano aligned_sequences.fasta
 
 
 Lastly, use 'iqtree' to make the tree. The output file from the last command will be the input file
 
-- iqtree -s aligned_sequences.fasta -m LG -bb 1000 -pre output
+ iqtree -s aligned_sequences.fasta -m LG -bb 1000 -pre output
 
 
 Use 'cat' to show the content of the "output.contree" file. This will be used in R studio to create this particular phylogenetic tree
 
-- cat output.contree
+ cat output.contree
 
 
 In R studio, paste this:
